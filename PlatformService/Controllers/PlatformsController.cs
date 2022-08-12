@@ -15,14 +15,14 @@ namespace PlatformService.Controllers
     [ApiController] 
     public class PlatformsController: ControllerBase
     {
-        private readonly IPlatformRepo _repository;
+        private readonly IPlatformRepo _repo;
         private readonly IMapper _mapper;
         private readonly ICommandDataClient _commandDataClient;
         private readonly IMessageBusClient _messageBusClient;
 
-        public PlatformsController(IPlatformRepo repository, IMapper mapper, ICommandDataClient commandDataClient, IMessageBusClient messageBusClient)
+        public PlatformsController(IPlatformRepo repo, IMapper mapper, ICommandDataClient commandDataClient, IMessageBusClient messageBusClient)
         {
-            _repository=repository;
+            _repo=repo;
             _mapper=mapper;
             _commandDataClient = commandDataClient;
             _messageBusClient = messageBusClient;

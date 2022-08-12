@@ -10,16 +10,16 @@ using System.Threading.Tasks;
 
 namespace CommandsService.Controllers
 {
-    [Route("api/c/platforms/{platformId}/[controller]")]
+    [Route("api/c/platforms/{platformId}/[controller]")] 
     [ApiController]
     public class CommandsController: ControllerBase
     {
-        private readonly ICommandRepo _repository;
+        private readonly ICommandRepo _repo;
         private readonly IMapper _mapper;
 
-        public CommandsController(ICommandRepo repository, IMapper mapper)
+        public CommandsController(ICommandRepo repo, IMapper mapper)
         {
-            _repository = repository;
+            _repo = repo;
             _mapper = mapper;
         }
 
